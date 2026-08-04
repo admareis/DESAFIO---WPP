@@ -1,0 +1,159 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+body{
+    height: 100dvh;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 60px 420px 2fr;
+}
+nav{ /*nav separadas por div para espaçar*/
+    background-color: #F7F5F2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+.container-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.container-nav > img{
+    width: 40px;
+    border-radius: 100%;
+    padding: 7px;
+}
+.container-nav > img:hover{
+    background-color: #a9a9a993;
+}
+.container-form-buttons > input{
+    outline: none;
+}
+.buttons{
+    justify-content: center;
+}
+
+main{
+    background-image: url(./imgs/whatsapp_bg.png);
+}
+
+.topo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+.topo-chat{
+    display: flex;
+}
+.topo-chat > img{
+    width: 30px;
+}
+.topo>h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:#5ea516;
+}
+.form{
+    text-align: center;
+}
+.form input{
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background-color: #4243432e;
+    outline: none;
+}
+.form input:focus{
+    border-color:  #5ea516;
+}
+.form > img{
+    width: 10px;
+    border-radius: 100%;
+    padding: 7px;
+}
+.form:hover{
+    background-color: #a9a9a993;
+}
+.container-form-buttons{
+    display: flex;
+    flex-direction: column; 
+    padding: 10px;  
+}
+.buttons{
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+}
+.buttons button{
+    border: none;
+    border-radius: 20px;
+    padding: 8px;
+    cursor: pointer;
+}
+.buttons button:hover{
+    background-color: #aad99e77;
+}
+.card{
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 5px;
+}
+.chat{
+    display: grid;
+    border-radius: 10px;
+    padding: 5px;
+    grid-template-columns: 70px 1fr;
+    grid-template-areas: 
+    "foto nome hora"
+    "foto texto notification";
+}
+.chat:hover{
+    background-color: #4243432e;
+
+}
+.foto{
+    grid-area: foto;
+    grid-column: 1;
+    width: 60px;
+    border-radius: 60px;   
+}
+.nome{
+    grid-area: nome;
+    grid-column: 2;
+}
+.texto{
+    grid-area: texto;
+    grid-column: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.hora{
+    grid-area: hora;
+    grid-column: 3;    
+}
+.notification{
+    width: 20px;
+    height: 20px;
+    grid-area: notification;
+    grid-column: 3; 
+    background-color: #5ea516;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
