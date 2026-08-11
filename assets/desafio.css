@@ -215,6 +215,7 @@ main{
 .recebidas>span, .enviadas>span{ /*empurra o horário para o final */
     float: right;
     color: #0000007c;
+    padding-top: 1px;
     padding-left: 5px;
 }
 .recebidas{

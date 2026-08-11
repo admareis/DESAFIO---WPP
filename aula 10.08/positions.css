@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    gap: 50px;
+}
+.triangulo{
+        /*background-color: black;
+        width: 200px;
+        height: 200px;*/
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 50px solid white;
+        rotate: 180deg;
+        position: absolute;
+        right: 50px;
+}
+.elemento-pai{
+    width: 200px;
+    height: 100px;
+    background-color: #00ffd9e9;
+    position: relative;
+}
+.folha{
+    position: absolute;
+    border-left: 60px solid white;
+    border-right: 0px solid transparent;
+    border-bottom: 60px solid #f5f5f5a1;
+    rotate: 90deg;
+    right: 0;
+}
+.elemento-father{
+    width: 200px;
+    height: 300px;
+    background-color: #e6dfdf;
+    position: relative;
+}
+.pai-packman{
+    position: relative;
+    background-color: yellow;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+}
+.packman{    
+    border-bottom: 160px solid transparent;
+    border-right:120px solid white;
+    position: absolute;
+    rotate: 100deg;
+    top: 30px;
+    right: 1px;
+}
+.packman-eyes{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: black;    
+    top: 55px;
+    right: 90px;    
+}
+.circulo{
+    background-color: white;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    border-top: 30px solid green;
+    border-left: 30px solid red;
+    border-right: 30px solid yellow;
+    border-bottom: 30px solid blue;
+}
