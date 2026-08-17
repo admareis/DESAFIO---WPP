@@ -3,11 +3,34 @@ import { usuarios, listarUser, receberIndice, listMsg } from "./contatos.js";
 //receberIndice()
 //listMsg(2,3)
 
+const btnPerfil = document.querySelector("#btnPerfil");
+const telaPerfil = document.querySelector(".telaPerfil");
+const telaConversas = document.querySelector(".container-stick");
+const listaContatos = document.querySelector(".card");
+
+function alternarPerfil() {
+  const perfilAberto = !telaPerfil.classList.contains("oculta");
+
+  if (perfilAberto) {
+    telaPerfil.classList.add("oculta");
+    telaConversas.classList.remove("oculta");
+    listaContatos.classList.remove("oculta");
+  
+  }
+  else{
+  telaConversas.classList.add("oculta");
+  listaContatos.classList.add("oculta");
+  telaPerfil.classList.remove("oculta");
+  }
+}
+
+btnPerfil.addEventListener("click", alternarPerfil);
+
 const elemento = {
-    grid_container: document.querySelector(".grid-msg"),    
+    grid_container: document.querySelector(".grid-msg"),
     form_send_message: document.querySelector("#form_send_message"),
-    input_send_menssage: document.querySelector("#input_send_msg"),
-    lista_contatos:document.querySelector(".chat"),
+    input_send_message: document.querySelector("#input_send_msg"),
+    lista_contatos: document.querySelector(".card"),
 };
 
 console.log(elemento.lista_contatos);

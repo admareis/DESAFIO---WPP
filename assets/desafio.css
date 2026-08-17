@@ -32,6 +32,13 @@ nav{ /*nav separadas por div para espaçar*/
     border-radius: 100%;
     padding: 7px;
 }
+.container-nav>button{
+    border-radius: 100%;
+}
+.container-nav>button>img{
+    width: 40px;
+    border-radius: 100%;
+}
 .container-nav > img:hover{
     background-color: #a9a9a993;
 }
@@ -163,6 +170,44 @@ main{
     height: 60px;
     border-radius: 100%;
 }
+
+/* section perfil */
+
+.lista-contatos {
+    display: flex;
+    flex-direction: column;
+}
+
+.telaPerfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.lista-contatos,
+.telaPerfil {
+    max-height: 100dvh;
+}
+
+.oculta {
+    display: none !important;
+}
+
+.img-perfil > img{  
+    border-radius: 100%;
+}
+.nav-troca-perfil{
+    display: flex;
+    flex-direction: row;
+}
+.nav-troca-perfil > img{
+    width:50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+
+/* main*/
+
 .topo-main{
     display: flex;
     gap: 10px;
@@ -195,15 +240,21 @@ main{
 .grid-msg input{
     width: 100%;
     padding: 15px 12px;
-    border: 1px solid ;
+    border: 1px solid #ccc;
     border-radius: 20px;
     background-color: #4243432e;
     outline: none;
 }
+.grid-msg form {
+    flex: 1;
+}
+
 #send-msg{
     background-color: #fff;
 }
 .troca-mensagens{
+    flex: 1;
+    min-height: 0;
     margin-top: auto;
     padding: 12px;
     gap: 10px;
