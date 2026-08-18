@@ -3,10 +3,11 @@ import { usuarios, listarUser, receberIndice, listMsg } from "./contatos.js";
 //receberIndice()
 //listMsg(2,3)
 
+// função de alternancia entre tela perfil e lista contatos // 
 const btnPerfil = document.querySelector("#btnPerfil");
 const telaPerfil = document.querySelector(".telaPerfil");
 const telaConversas = document.querySelector(".container-stick");
-const listaContatos = document.querySelector(".card");
+const listaContatos = document.querySelector(".lista-contatos"); // era ".card"
 
 function alternarPerfil() {
   const perfilAberto = !telaPerfil.classList.contains("oculta");
@@ -15,19 +16,22 @@ function alternarPerfil() {
     telaPerfil.classList.add("oculta");
     telaConversas.classList.remove("oculta");
     listaContatos.classList.remove("oculta");
-  
-  }
-  else{
-  telaConversas.classList.add("oculta");
-  listaContatos.classList.add("oculta");
-  telaPerfil.classList.remove("oculta");
+  } 
+  else {
+    telaConversas.classList.add("oculta");
+    listaContatos.classList.add("oculta");
+    telaPerfil.classList.remove("oculta");
   }
 }
 
 btnPerfil.addEventListener("click", alternarPerfil);
 
+ //////////////////////////////////////////////
+
+
+
 const elemento = {
-    grid_container: document.querySelector(".grid-msg"),
+    grid_container: document.querySelector(".troca-mensagens"),
     form_send_message: document.querySelector("#form_send_message"),
     input_send_message: document.querySelector("#input_send_msg"),
     lista_contatos: document.querySelector(".card"),
@@ -74,23 +78,24 @@ function criarContatos(foto, nome, hora, ultima, naoLidas, idContato){
     const fotoContato = document.createElement('img');
     const nomeContato = document.createElement('h3');
     const horaMsg = document.createElement('p');
-    const msgUltimaMensagem = document.createElement('p');
+    const msgUltima = document.createElement('p');
     const msgNaoLidas = document.createElement('p');
 
     cardContainer.className = "chat";
     fotoContato.className = "foto";
     nomeContato.className = "nome";
     horaMsg.className= "hora";
-    msgUltimaMensagem.className = "texto";
+    msgUltima.className = "texto";
     msgNaoLidas.className = "";
 
     cardContainer.id = idContato; // adiciona o id do contato no container para servir de parametro da função que carrega das mensagens no grid // 
-    fotoContato.src = foto;
+    fotoContato.src = `https://i.pravatar.cc/150?img=${idContato+1}`;
     nomeContato.innerText = nome;
     horaMsg.innerText = hora;
-    msgUltimaMensagem.innerText = ultima;
+    msgUltima.innerText = ultima;
     msgNaoLidas.innerText = naoLidas;
 
-    cardContainer.append(fotoContato, nomeContato, horaMsg, msgUltimaMensagem, msgNaoLidas)
+    cardContainer.append(fotoContato, nomeContato, horaMsg, msgUltima, msgNaoLidas)
     elemento.lista_contatos.append(cardContainer)
 }
+

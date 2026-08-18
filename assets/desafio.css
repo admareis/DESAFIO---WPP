@@ -12,6 +12,7 @@ body{
     height: 100dvh;
     display: grid;
     grid-template-columns: 60px 420px 2fr;
+    grid-template-areas: "nav section main";
 }
 nav{ /*nav separadas por div para espaçar*/
     background-color: #F7F5F2;
@@ -19,6 +20,7 @@ nav{ /*nav separadas por div para espaçar*/
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
+    grid-area: nav;
 }
 .container-nav{
     display: flex;
@@ -54,11 +56,13 @@ main{
     display: flex;
     flex-direction: column;
     height: 100dvh;
+    grid-area: main;
 }
 .contatos-container{
     max-height: 100dvh;
     display: flex;
     flex-direction: column;
+    grid-area: section;
 }
 .topo{
     display: flex;
@@ -115,11 +119,14 @@ main{
     background-color: #aad99e77;
 }
 .card{
+    flex: 1;
+    min-width: 0;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
     gap: 15px;
     padding: 5px;
+
 }
 .chat{
     display: grid;    
@@ -133,6 +140,7 @@ main{
 }
 .chat:hover{
     background-color: #4243432e;
+    cursor: pointer;
 }
 .foto{
     grid-area: foto;
@@ -176,33 +184,64 @@ main{
 .lista-contatos {
     display: flex;
     flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+.container-perfil{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 30px;
+}
+.container>img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .telaPerfil {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1;
+    min-height: 0;
 }
-.lista-contatos,
-.telaPerfil {
-    max-height: 100dvh;
-}
-
 .oculta {
     display: none !important;
 }
+.img-perfil{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .img-perfil > img{  
+    width: 200px;
+    height: 200px;
     border-radius: 100%;
 }
 .nav-troca-perfil{
     display: flex;
-    flex-direction: row;
+    gap: 10px;
+    flex-direction: column;
+    
 }
-.nav-troca-perfil > img{
-    width:50px;
-    height: 50px;
-    border-radius: 100%;
+.dados {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.perfil > img{
+    width:60px;
+    height: 60px;
+    border-radius: 100%;    
+}
+.lista-perfis{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin: 20px;
+    gap: 10px;
 }
 
 
@@ -248,7 +287,6 @@ main{
 .grid-msg form {
     flex: 1;
 }
-
 #send-msg{
     background-color: #fff;
 }
@@ -276,12 +314,23 @@ main{
     row-gap: 10px;
     padding: 5px 10px;
     border-radius: 10px;
+    top: 0;
+    left: -2px;
+    border-top: 0px solid #F7F5F2;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
 }
 .enviadas{
     grid-column: 12/24;
+    justify-self: end;
     width: fit-content; /*ajusta mensagens menores*/
     background-color: #8fbc8f9f;
     row-gap: 10px;
     padding: 5px 10px;
     border-radius: 10px;
+    top: 0;
+    left: -2px;
+    border-top: 0px solid #8fbc8f9f;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
 }
